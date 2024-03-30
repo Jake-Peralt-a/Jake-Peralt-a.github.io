@@ -7,7 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="favicon.png" href="favicon.ico">
-
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="landing is-preload">
@@ -17,14 +16,14 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Lakshya</a></h1>
+						<h1><a href="index.html"><img src="favicon.png" alt="Lakshya Logo"></a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="#>Home</a></li>
+											<li><a href="#">Home</a></li>
 											<li><a href="#">Generic</a></li>
 											<li><a href="#">Elements</a></li>
 											<li><a href="#">Sign Up</a></li>
@@ -106,10 +105,10 @@
 							</div>
 						</section>
 						<section class="spotlight">
-							<div class="image"><img src="images/drone.jpg" alt="" /></div><div class="content">
+							<div class="image"><img src="images/semi.jpg" alt="" /></div><div class="content">
 								<h2>Drones<br />
 								</h2>
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione repudiandae exercitationem ipsa doloribus, soluta voluptatem delectus. Eum iste voluptatum quidem explicabo blanditiis maiores cumque, expedita officia omnis consequatur eaque ad?</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id expedita amet, nemo, dolor quis aliquam minus cupiditate enim ab quod natus nobis, voluptate delectus laboriosam. Doloremque eligendi repellat repellendus eveniet.</p>
 							</div>
 						</section>
 					</section>
@@ -215,6 +214,33 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				window.addEventListener('scroll', function () {
+				  var spotlightElements = document.querySelectorAll('.spotlight');
+				  
+				  // Remove the 'in-view' class from all spotlight sections
+				  spotlightElements.forEach(function (spotlight) {
+					spotlight.classList.remove('in-view');
+				  });
+			  
+				  // Add the 'in-view' class to spotlight sections that are in view
+				  spotlightElements.forEach(function (spotlight) {
+					if (isInViewport(spotlight)) {
+					  spotlight.classList.add('in-view');
+					}
+				  });
+				});
+			  
+				function isInViewport(element) {
+				  var rect = element.getBoundingClientRect();
+				  return (
+					rect.top >= 0 &&
+					rect.left >= 0 &&
+					rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+					rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+				  );
+				}
+			  </script>
+			  
 	</body>
 </html>
