@@ -4227,11 +4227,11 @@ input, select, textarea {
 	  }
 	  
 	  .features li:nth-child(even) {
-		background-color: rgba(0, 0, 0, 0.035);
+		background-color: rgba(208 215 223);
 	  }
 	  
 	  .features li:nth-child(odd) {
-		background-color: rgba(0, 0, 0, 0.07);
+		background-color: rgba(208 215 223);
 	  }
 	  
 	  .features li img {
@@ -4434,8 +4434,11 @@ input, select, textarea {
 		width: 100%;
 		height: 100%;
 		object-fit: cover; /* Maintain aspect ratio and fill container */
+		transition: transform 0.3s ease;
 	  }
-	  
+	  .image-container1 img hover {
+		transform: scale(1.05); /* Enlarge the section on hover */
+	}
 	  .name-overlay {
 		position: absolute;
 		bottom: 0;
@@ -4456,3 +4459,304 @@ input, select, textarea {
 	  }
 
 
+	  #header h1 img {
+		max-width: 100px; /* Adjust the maximum width of the image */
+		height: 120%; /* Maintain aspect ratio */
+		vertical-align: middle; /* Align the image vertically within the line */
+		margin-right: 10px; /* Add some space between the image and the text */
+	  }
+
+	  .spotlight {
+		display: flex;
+		align-items: center;
+	  }
+	  
+	  .spotlight .image {
+		border-radius: 0;
+		width: 0; /* Initially set width to 0 */
+		transition: width 0.5s ease-out; /* Add transition for smooth width change */
+	  }
+	  
+	  .spotlight .image img {
+		border-radius: 0;
+		width: 100%;
+	  }
+	  
+	  .spotlight .content {
+		padding: 2em 4em 0.1em 4em;
+		max-width: 48em;
+		width: 60%;
+		opacity: 0; /* Initially set opacity to 0 */
+		transform: translateX(-20px); /* Move content to the left */
+		transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Add transition for smooth opacity and transform change */
+	  }
+	  
+	  .spotlight:nth-child(2n) {
+		flex-direction: row-reverse;
+	  }
+	  
+	  /* Animation when spotlight comes into view */
+	  .spotlight.in-view .image {
+		width: 40%;
+	  }
+	  
+	  .spotlight.in-view .content {
+		opacity: 1;
+		transform: translateX(0);
+	  }
+	  
+	  /* Background colors for odd and even spotlights */
+	  .spotlight:nth-child(odd) {
+		background-color: rgba(0, 0, 0, 0.075);
+	  }
+	  
+	  .spotlight:nth-child(even) {
+		background-color: rgba(0, 0, 0, 0.15);
+	  }
+	  
+	  /* Add more background colors for additional spotlights if needed */
+	  
+	  @media screen and (max-width: 1280px) {
+		.spotlight .image {
+		  width: 45%;
+		}
+		.spotlight .content {
+		  width: 55%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 980px) {
+		.spotlight {
+		  display: block;
+		}
+		.spotlight br {
+		  display: none;
+		}
+		.spotlight .image {
+		  width: 100%;
+		}
+		.spotlight .content {
+		  padding: 4em 3em 2em 3em;
+		  max-width: none;
+		  text-align: center;
+		  width: 100%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 736px) {
+		.spotlight .content {
+		  padding: 3em 2em 1em 2em;
+		}
+	  }
+
+
+	  #one {
+		background-color: #f7f7f7; /* Very light grey background for a clean look */
+		padding: 5em 0; /* Generous padding for a spacious feel */
+		color: #555; /* Dark grey text for soft contrast and readability */
+		font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* Elegant and simple font */
+		transition: transform 0.3s ease; /* Smooth transition for size change */
+	}
+	
+	
+	
+	#one .inner {
+		max-width: 960px; /* Increased width for a wider content area */
+		margin: auto; /* Centers the inner content block */
+		padding: 2em; /* Adequate padding inside the inner content block */
+		background-color: #fff; /* Pure white background for the content area */
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /* Soft shadow for a subtle depth effect */
+		border-radius: 3px; /* Slightly rounded corners for a softer look */
+		transition: transform 0.5s ease; /* Smooth transition for size change */
+	}
+	
+	#one:hover .inner {
+		transform: scale(1.05); /* Enlarge the inner content on hover */
+	}
+	
+	  
+	#header h1 img {
+		max-width: 100px; /* Adjust the maximum width of the image */
+		height: 120%; /* Maintain aspect ratio */
+		vertical-align: middle; /* Align the image vertically within the line */
+		margin-right: 10px; /* Add some space between the image and the text */
+	  }
+	  
+	  .spotlight {
+		display: flex;
+		align-items: center;
+	  }
+	  
+	  .spotlight .image {
+		border-radius: 0;
+		width: 0; /* Initially set width to 0 */
+		transition: width 0.8s cubic-bezier(0.39, 0.58, 0.57, 1); /* Adjust cubic-bezier values */
+	  }
+	  
+	  .spotlight .image img {
+		border-radius: 0;
+		width: 100%;
+	  }
+	  
+	  .spotlight .content {
+		padding: 2em 4em 0.1em 4em;
+		max-width: 48em;
+		width: 60%;
+		opacity: 0; /* Initially set opacity to 0 */
+		transform: translateX(-20px); /* Move content to the left */
+		transition: opacity 0.8s cubic-bezier(0.39, 0.58, 0.57, 1), transform 0.8s cubic-bezier(0.39, 0.58, 0.57, 1); /* Adjust cubic-bezier values */
+	  }
+	  
+	  .spotlight:nth-child(2n) {
+		flex-direction: row-reverse;
+	  }
+	  
+	  /* Animation when spotlight comes into view */
+	  .spotlight.in-view .image {
+		width: 40%;
+	  }
+	  
+	  .spotlight.in-view .content {
+		opacity: 1;
+		transform: translateX(0);
+	  }
+	  
+	  /* Background colors for odd and even spotlights */
+	  .spotlight:nth-child(odd) {
+		background-color: rgba(0, 0, 0, 0.075);
+	  }
+	  
+	  .spotlight:nth-child(even) {
+		background-color: rgba(0, 0, 0, 0.15);
+	  }
+	  
+	  /* Add more background colors for additional spotlights if needed */
+	  @media screen and (max-width: 1280px) {
+		.spotlight .image {
+		  width: 45%;
+		}
+	  
+		.spotlight .content {
+		  width: 55%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 980px) {
+		.spotlight {
+		  display: block;
+		}
+	  
+		.spotlight br {
+		  display: none;
+		}
+	  
+		.spotlight .image {
+		  width: 100%;
+		}
+	  
+		.spotlight .content {
+		  padding: 4em 3em 2em 3em;
+		  max-width: none;
+		  text-align: center;
+		  width: 100%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 736px) {
+		.spotlight .content {
+		  padding: 3em 2em 1em 2em;
+		}
+	  }
+
+	  #header h1 img {
+		max-width: 100px; /* Adjust the maximum width of the image */
+		height: 120%; /* Maintain aspect ratio */
+		vertical-align: middle; /* Align the image vertically within the line */
+		margin-right: 10px; /* Add some space between the image and the text */
+	  }
+	  
+	  .spotlight {
+		display: flex;
+		align-items: center;
+	  }
+	  
+	  .spotlight .image {
+		border-radius: 0;
+		width: 0; /* Initially set width to 0 */
+		transition: width 0.4s cubic-bezier(0.39, 0.58, 0.57, 1); /* Adjust transition duration and timing function */
+	  }
+	  
+	  .spotlight .image img {
+		border-radius: 0;
+		width: 100%;
+	  }
+	  
+	  .spotlight .content {
+		padding: 2em 4em 0.1em 4em;
+		max-width: 48em;
+		width: 60%;
+		opacity: 0; /* Initially set opacity to 0 */
+		transform: translateX(-20px); /* Move content to the left */
+		transition: opacity 0.5s cubic-bezier(0.39, 0.58, 0.57, 1), transform 0.4s cubic-bezier(0.39, 0.58, 0.57, 1); /* Adjust transition duration and timing function */
+	  }
+	  
+	  .spotlight:nth-child(2n) {
+		flex-direction: row-reverse;
+	  }
+	  
+	  /* Animation when spotlight comes into view */
+	  .spotlight.in-view .image {
+		width: 40%;
+	  }
+	  
+	  .spotlight.in-view .content {
+		opacity: 1;
+		transform: translateX(0);
+	  }
+	  
+	  /* Background colors for odd and even spotlights */
+	  .spotlight:nth-child(odd) {
+		background-color: rgba(0, 0, 0, 0.075);
+	  }
+	  
+	  .spotlight:nth-child(even) {
+		background-color: rgba(0, 0, 0, 0.15);
+	  }
+	  
+	  /* Add more background colors for additional spotlights if needed */
+	  @media screen and (max-width: 1280px) {
+		.spotlight .image {
+		  width: 45%;
+		}
+	  
+		.spotlight .content {
+		  width: 55%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 980px) {
+		.spotlight {
+		  display: block;
+		}
+	  
+		.spotlight br {
+		  display: none;
+		}
+	  
+		.spotlight .image {
+		  width: 100%;
+		}
+	  
+		.spotlight .content {
+		  padding: 4em 3em 2em 3em;
+		  max-width: none;
+		  text-align: center;
+		  width: 100%;
+		}
+	  }
+	  
+	  @media screen and (max-width: 736px) {
+		.spotlight .content {
+		  padding: 3em 2em 1em 2em;
+		}
+	  }
